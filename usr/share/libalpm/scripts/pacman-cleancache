@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if [ "$(grep 'KeepNumPackages = 0' /etc/pamac.conf)" != "" ]; then
-    paccache -rvk0 >/dev/null
+if ! grep KeepNumPackages /etc/pacman.conf; then
+    paccache -rvk1 >/dev/null
 fi
